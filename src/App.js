@@ -1,37 +1,16 @@
+import React, { useState } from "react";
 import "./App.css"; 
-import Employee from "./Employee"
+import Counter from "./Counter"
 
 function App() {
-  const employeeInfo= [
-    {
-      id:"1",
-      firstName:"Smith",
-      lastName:"William",
-      role:"Programmer Analyst"      
-    },
-    {
-      id:"2",
-      firstName:"John",
-      lastName:"Doe",
-      role:"Developer"
-    }
-  ];
-
+  const [showCounter, setShowCounter] = useState();
   return (
     <div className="App">
-      {
-        employeeInfo && employeeInfo.length> 0 &&
-        (
-      <header className="App-header">
-        <h1>Company Directory</h1>
-        {
-        employeeInfo.map((employee)=>          
-          {
-            return <Employee key={employee.id} {...employee}/>
-          })}        
-        </header> 
-        )
-      }             
+      <h1>Counter app</h1>
+      <button onClick={()=>setShowCounter(!showCounter)}>
+        {showCounter ? "Hide Counter" : "Show Counter"}
+      </button>
+        {showCounter && <Counter/>}
     </div>
   );
 }
