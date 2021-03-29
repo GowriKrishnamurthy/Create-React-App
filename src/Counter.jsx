@@ -6,11 +6,26 @@ const Counter = () => {
     setCounter(counter + 1);
   };
 
+  //componentDidMount
+//   useEffect(()=>
+//   {
+//       console.log('The component has mounted');
+//   },[])
+
+//   //componentDidUpdate
+//   useEffect(()=>
+//   {
+//       console.log('The component has been updated');
+//   },[counter])
+  
+
+//  componentWillUnmount 
   useEffect(()=>
   {
       console.log('The component has mounted');
       return()=>{console.log('The component has unmounted');}
   },[])
+
 
   return (
     <div>
